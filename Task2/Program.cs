@@ -5,7 +5,7 @@
     for (int i = 0; i < size_1234; i++)
     {
         createdArray[i] = rnd.Next(100, 1000);
-        Console.Write(createdArray[i] + " ");
+        //Console.Write(createdArray[i] + " ");
     }
     return createdArray;
 }
