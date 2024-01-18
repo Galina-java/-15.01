@@ -1,22 +1,36 @@
-﻿using System;
-class Program
+﻿int[] CreateArray(int size_1234)
 {
-    static void Main()
+    int[] createdArray = new int[size_1234];
+    Random rnd = new Random();
+    for (int i = 0; i < size_1234; i++)
     {
-        int[] numbers = new int[10];
-        Random random = new Random();
-        int evenCount = 0;
+        createdArray[i] = rnd.Next(100, 1000);
+        Console.Write(createdArray[i] + " ");
+    }
+    return createdArray;
+}
 
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            numbers[i] = random.Next(100, 1000);
-            Console.Write(numbers[i] + " ");
-
-            if (numbers[i] % 2 == 0)
-            {
-                evenCount++;
-            }
-        }
-        Console.WriteLine($"\nКоличество четных чисел в массиве: {evenCount}");
+void ShowArray(int[] arrayToShow)
+{
+    for (int i = 0; i < arrayToShow.Length; i++)
+    {
+        Console.Write($"{arrayToShow[i]} ");
     }
 }
+
+int NumberOfElem(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+            count++;
+    }
+    return count;
+}
+
+int size = 10;
+int[] arrayTask1 = CreateArray(size);
+ShowArray(arrayTask1);
+Console.WriteLine ();
+Console.WriteLine( "Количество чётных чисел в массиве "+ NumberOfElem(arrayTask1));
